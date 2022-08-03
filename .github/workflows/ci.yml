@@ -10,6 +10,21 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3.0.2
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          # NPM on Linux stores its cache in this directory
+          path: ~/.npm
+          # Hey can have expressions in name
+          # We want to create new cache key when our dependencies are changed
+          # so if anything in packge-lock.json has changed
+          # so we use hashFiles function
+          # We want also to generate new cache when operating system has changed
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          # restored when main key not found
+          # It will search for older caches that starts with this pattern
+          restore-keys: |
+            ${{ runner.os }}-node-
       - uses: actions/setup-node@v1
         name: Setup Node Version
         with:
