@@ -23,7 +23,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           # restored when main key not found
           # It will search for older caches that starts with this pattern
-          restore-key: |
+          restore-keys: |
             ${{ runner.os }}-node-
       - uses: actions/setup-node@v1
         name: Setup Node Version
