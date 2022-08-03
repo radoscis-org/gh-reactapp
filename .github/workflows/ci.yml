@@ -24,13 +24,13 @@ jobs:
         env:
           CI: true
       - name: Build Project
-        if: github.event_name == "push"
+        if: github.event_name == 'push'
         run: npm run build
       # - name: Install Surge
       #   run: npm install --global surge
       # Instead we will install and run in one command
       - name: Deploy to Staging Surge
-        if: github.event_name == "push"
+        if: github.event_name == 'push'
         run: npx surge --project ./build --domain angry-babies.surge.sh
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
