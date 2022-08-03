@@ -13,7 +13,7 @@ jobs:
       - name: Cache node_modules
         uses: actions/cache@v1
         with:
-        # NPM on Linux stores its cache in this directory
+          # NPM on Linux stores its cache in this directory
           path: ~/.npm
           # Hey can have expressions in name
           # We want to create new cache key when our dependencies are changed
