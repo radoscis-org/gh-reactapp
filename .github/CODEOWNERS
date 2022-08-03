@@ -1,4 +1,6 @@
 * @radoscis
+**/*.js @piotrjanis
+**/*.yml @piotrjanis
 <!-- *.js @radoscis
 *.yml @radoscis
 /public/ @someuer -->
