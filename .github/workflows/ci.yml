@@ -38,12 +38,23 @@ jobs:
         # We need to have CI=true to not cause interactive actions from npm
         env:
           CI: true
+      - name: Upload Test Coverage
+        uses: actions/upload-artifact@v1
+        with:
+          path: coverage
+          name: code-coverage
       - name: Build Project
         if: github.event_name == 'push'
         run: npm run build
       # - name: Install Surge
       #   run: npm install --global surge
       # Instead we will install and run in one command
+      - name: Upload Build folder
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v1
+        with:
+          path: build
+          name: build
       - name: Deploy to Staging Surge
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain angry-babies.surge.sh
