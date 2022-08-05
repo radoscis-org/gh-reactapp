@@ -1,4 +1,4 @@
-name: Notify From Release
+name: Notify about Issue
 on:
   issues:
     types: [opened]
