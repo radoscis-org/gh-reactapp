@@ -83,7 +83,7 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Open Issue when Failed
-        if: failure() and github.event_name == 'pull_request'
+        if: failure() && github.event_name == 'pull_request'
         # Create automatic issue when pipeline fails
         # Put commit in Title, Workflow name in boy and assign user who created PR
         run: |
