@@ -1,0 +1,22 @@
+name: Notify From Release
+on:
+  release:
+    types: [published]
+
+jobs:
+  email-message:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: send an email
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: radoslaw.cisz@gmail.com
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: Release ${{ github.event.release.tag_name }} was published
+        to: pjanis@o2.pl
+        from: Luke Skywalker
+        body: Release reachable under lin ${{ github.event.release.html_url }}
+
+
