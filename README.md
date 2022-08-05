@@ -1,4 +1,4 @@
-![](https://github.com/radoscis/gh-reactapp/workflows/CI/badge.svg?branch=[master|develop]&event=push)
+![](https://github.com/radoscis/gh-reactapp/workflows/CI/badge.svg?branch=main&event=push)
 
 # Getting Started with Create React App
 
