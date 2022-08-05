@@ -1,4 +1,5 @@
 ![](https://github.com/radoscis/gh-reactapp/workflows/CI/badge.svg?branch=[master|develop]&event=push)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
