@@ -1,0 +1,26 @@
+# Define the name of the GitHub Action workflow
+name: Test
+# This workflow is manually triggered using the GitHub Actions UI
+on:
+  workflow_dispatch:
+    # Define inputs that are required for the manual trigger
+
+# Jobs to be executed in this workflow
+jobs:
+  # Job for applying the ec2 instance
+  apply_tf:
+    runs-on: ubuntu-latest
+
+    # Execute this step only if the action input is "apply"
+
+    # Define the steps for this job
+    steps:
+
+    # checkout the code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+
+    # Validate the Terraform code
+    - name: Test
+      run: date
